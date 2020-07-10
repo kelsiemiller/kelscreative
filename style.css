@@ -1,0 +1,857 @@
+/*!
+Theme Name: kels creative
+Theme URI: http://underscores.me/
+Author: Kelsie Miller
+Author URI: http://underscores.me/
+Description: A custom theme for portfolio website
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: kelscreative
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+kels creative is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+# Small Menu
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+# Theme Specific Styles
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Small Menu
+--------------------------------------------------------------*/
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+
+/*--------------------------------------------------------------
+# THEME SPECIFIC STYLES
+--------------------------------------------------------------*/
+
+
+
+/*---------- GENERAL STYLES ----------*/
+
+body {
+	letter-spacing: 2px;
+	font-size: 14px;
+	color: #333;
+	background-color: #fff;
+}
+
+.section {
+	padding: 120px 0;
+}
+
+/*---------- SUPERSLIDES STYLES ----------*/
+
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 4;
+}
+
+.slides-navigation {
+	z-index: 6;
+}
+
+.slides-navigation .prev,
+.slides-navigation .next {
+	width: 47px;
+	height: 47px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.slides-navigation a.prev {
+	left: 20px;
+	background-image: url('/wp-content/themes/kelscreative/assets/img/icons/previous.png');
+}
+
+.slides-navigation a.next {
+	right: 20px;
+	background-image: url('/wp-content/themes/kelscreative/assets/img/icons/next.png');
+}
+
+.titleMessage {
+	position: absolute;
+	width: 100%;
+	height: 250px;
+	top:50%;
+	z-index: 5;
+	text-align: center;
+	margin-top: -125px;
+}
+
+.titleMessage .heading p {
+	color: #525252;
+	text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+	font-weight: 200;
+	letter-spacing: 7px;
+}
+
+.titleMessage .heading .main {
+	font-size: 50px;
+}
+
+.titleMessage .heading .sub {
+	font-size: 24px;
+}
+
+#slides {
+	margin-top: -80px;
+}
+
+img.logo {
+	max-width: 175px;
+	max-height: 100px;
+}
+
+
+/*---------- NAVIGATION SECTION STYLES ----------*/
+
+#navigation {
+	z-index: 100;
+	width: 100%;
+	height: 80px;
+}
+
+#navigation .navbar-nav li {
+	padding: 0 10px;
+}
+
+#navigation .navbar-nav li a {
+	color: #525252;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+	color: #525252;
+}
+
+.navbar-brand {
+	padding-top: 20px;
+}
+
+.navbar-toggler-icon {
+	background: url('/wp-content/themes/kelscreative/assets/img/icons/menu.png');
+	background-size: 100%;
+}
+
+.navbar-default {
+	background: none;
+}
+
+/*.fixedNav #navigation {
+	position: fixed;
+	top: 0;
+}*/
+
+.loader {
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+/*.loader .inner {
+	width: 100%;
+	height: 100%;
+	background: url(../img/813.gif) center center no-repeat;
+}*/
+
+/*---------- ABOUT SECTION STYLES ----------*/
+
+.aboutImage {
+	max-width: 100%;
+}
+
+
+/*---------- SKILLS SECTION STYLES ----------*/
+
+.skillsSection {
+	background: url('/wp-content/themes/kelscreative/assets/img/3colors.jpg') 50% 0 repeat fixed;
+	background-size: cover;
+	color: #212121;
+}
+
+.skill {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.skill:hover {
+	cursor: grab;
+}
+
+.chart {
+	position: relative;
+	width: 152px;
+	height: 152px;
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.chart .percent {
+	color: #000;
+	line-height: 152px;
+	display: inline-block;
+	font-size: 40px;
+}
+
+.chart .percent:after {
+	content: '%';
+}
+
+
+/*---------- STATS SECTION STYLES ----------*/
+
+
+.squareItem {
+	margin-top: 30px;
+	position: relative;
+}
+
+.squareInnerContainer {
+	position: relative;
+	padding: 50px 15px 35px;
+	text-align: center;
+	border: 2px solid #444;
+	border-top: none;
+}
+
+.squareInnerContainer:before,
+.squareInnerContainer:after {
+	content: ' ';
+	position: absolute;
+	top:0px;
+	width: 30%;
+	border-bottom: 2px solid #444;
+}
+
+.squareInnerContainer:before {
+	right: 0px;
+}
+
+.squareInnerContainer:after {
+	left: 0px;
+}
+
+.squareContent h2 {
+	font-size: 56px;
+	margin-bottom: 10px;
+	font-weight: 400;
+	color: #212121;
+}
+
+.squareContent h3 {
+	font-size: 13px;
+	font-weight: 600;
+	margin: 0;
+}
+
+.squareIcon {
+	position: absolute;
+	left: 50%;
+	top:-30px;
+	width: 40%;
+	height: 60px;
+	font-size: 45px;
+	margin-left: -20%;
+	color: #444;
+}
+
+
+/*---------- CONTACT SECTION STYLES ----------*/
+
+.contactSection {
+	background: url('/wp-content/themes/kelscreative/assets/img/tile.jpg');
+	background-repeat: repeat;
+	color: #212121;
+}
+
+.contactButton {
+	color: #212121;
+	padding: 15px 20px;
+	display: inline-block;
+	margin-top: 20px;
+	border: 1px solid #212121;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.contactButton:hover {
+	background-color: #212121;
+	color: #fff;
+	text-decoration: none;
+}
+
+.contact-container {
+	text-align: center;
+}
+
+.contact-heading {
+	margin-bottom: 20px;
+}
+
+.contact-name,
+.contact-email,
+.contact-subject,
+.contact-message {
+	border: none;
+	border-bottom: 1px solid #212121;
+	padding: 10px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.contact-message {
+	border: none;
+	border-bottom: 1px solid #212121;
+	padding: 10px 10px 60px 10px;
+	width: 100%;
+	margin-bottom: 20px;
+	max-height: 150px;
+}
+
+.contact-subButton {
+	color: #212121;
+	padding: 15px 20px;
+	display: inline-block;
+	margin-top: 20px;
+	border: 1px solid #212121;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.contact-subButton:hover {
+	background-color: #212121;
+	color: #fff;
+	text-decoration: none;
+}
+
+
+/*---------- PORTFOLIO SECTION STYLES ----------*/
+
+.filter a {
+	color: #808080;
+	border: 1px solid #808080;
+	padding: 10px 18px;
+	display: block;
+}
+
+.filter li {
+	display: inline-block;
+	padding: 5px;
+}
+
+.filter .current {
+	background-color: #212121;
+	border-color: #212121;
+	color: #fff;
+}
+
+.filter {
+	text-align: center;
+	width: 100%;
+}
+
+.portfolioSection .heading {
+	text-align: center;
+	padding-bottom: 40px;
+	width: 100%;
+}
+
+.itemsContainer {
+	width: 100%;
+	text-align: center;
+}
+
+.items li {
+	display: inline-block;
+	padding: 5px;
+}
+
+.items li img {
+	width: 100%;
+
+	-webkit-transition: all 0.2s linear, 1s;
+	-moz-transition: all 0.2s linear, 1s;
+	-o-transition: all 0.2s linear, 1s;
+	-ms-transition: all 0.2s linear, 1s;
+	-transition: all 0.2s linear, 1s;
+}
+
+.items .item {
+	position: relative;
+	display: block;
+	overflow: hidden;
+}
+
+.items .icons {
+	position: absolute;
+	width: 90px;
+	height: 40px;
+	left: 50%;
+	top: 50%;
+	margin: -20px auto 0 -47px;
+	text-align: center;
+	z-index: 3;
+}
+
+.items .icons i {
+	color: #fff;
+	font-size: 20px;
+	margin-top: 9px;
+}
+
+.items a {
+	width: 40px;
+	height: 40px;
+	background-color: #212121;
+	position: relative;
+	display: inline-block;
+
+	-webkit-transition: all 0.2s linear, 0.2s;
+	-moz-transition: all 0.2s linear, 0.2s;
+	-o-transition: all 0.2s linear, 0.2s;
+	-ms-transition: all 0.2s linear, 0.2s;
+	-transition: all 0.2s linear, 0.2s;
+
+}
+
+.items .imageOverlay {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+
+	-webkit-transition: all 0.2s linear, 1s;
+	-moz-transition: all 0.2s linear, 1s;
+	-o-transition: all 0.2s linear, 1s;
+	-ms-transition: all 0.2s linear, 1s;
+	-transition: all 0.2s linear, 1s;
+}
+
+.items .item:hover .imageOverlay {
+	opacity: 1;
+}
+
+.items .openButton {
+	float: left;
+	left: -200px;
+}
+
+.items .projectLink {
+	float: right;
+	right: -200px;
+}
+
+.items .item:hover .openButton {
+	left: 0;
+}
+
+.items .item:hover .projectLink {
+	right: 0;
+}
+
+.items .item:hover img {
+	-webkit-transform: scale(1.05, 1.05);
+	-moz-transform: scale(1.05, 1.05);
+	-o-transform: scale(1.05, 1.05);
+	-ms-transform: scale(1.05, 1.05);
+	-transform: scale(1.05, 1.05);
+}
+
+.items {
+	padding: 0;
+}
+
+
+/*---------- COPYRIGHT SECTION STYLES ----------*/
+
+.copyrightSection {
+	background-color: #212121;
+	color: #fff;
+	padding: 30px 5px;
+}
+
+.copyrightSection p {
+	margin: 0;
+}
+
+
+/*---------- FORM STYLES ----------*/
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/*---------- MOBILE RESPONSIVE STYLES ----------*/
+
+
+@media screen and (max-width: 988px) {
+  .intro-name {
+  	margin-top: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
